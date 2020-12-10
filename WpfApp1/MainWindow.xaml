@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lbxEmployees" HorizontalAlignment="Left" Height="246" Margin="68,96,0,0" VerticalAlignment="Top" Width="162"/>
-        <CheckBox x:Name="cbxFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbxPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="160,53,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbxEmployees" HorizontalAlignment="Left" Height="244" Margin="68,96,0,0" VerticalAlignment="Top" Width="232" SelectionChanged="lbxEmployees_SelectionChanged"/>
+        <CheckBox x:Name="cbxFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top" IsChecked="True" Click="cbxFullTime_Click"/>
+        <CheckBox x:Name="cbxPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="160,53,0,0" VerticalAlignment="Top" IsChecked="True" Click="cbxPartTime_Click"/>
         <Label Content="Employees" HorizontalAlignment="Left" Margin="68,73,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblFName" Content="First Name" HorizontalAlignment="Left" Margin="334,96,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbxFName" HorizontalAlignment="Left" Height="23" Margin="466,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
@@ -17,6 +17,17 @@
         <TextBox x:Name="tbxLName" HorizontalAlignment="Left" Height="23" Margin="466,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
         <RadioButton x:Name="rdoFullTime" Content="FT" HorizontalAlignment="Left" Margin="466,190,0,0" VerticalAlignment="Top" GroupName="EmployeeType"/>
         <RadioButton x:Name="rdoPartTime" Content="PT" HorizontalAlignment="Left" Margin="554,190,0,0" VerticalAlignment="Top" GroupName="EmployeeType"/>
+        <Label x:Name="lblSalary" Content="Salary" HorizontalAlignment="Left" Margin="334,222,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxSalary" HorizontalAlignment="Left" Height="23" Margin="466,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
+        <Label x:Name="lblHoursWorked" Content="Hours Worked" HorizontalAlignment="Left" Margin="334,261,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxHoursWorked" HorizontalAlignment="Left" Height="23" Margin="466,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
+        <Label x:Name="lblHourlyRate" Content="Hourly Rate" HorizontalAlignment="Left" Margin="334,289,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxHourlyRate" HorizontalAlignment="Left" Height="23" Margin="466,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="680,100,0,0" VerticalAlignment="Top" Width="75" Click="btnClear_Click"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="680,138,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="680,185,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="680,229,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="tblkMonthlyPay" HorizontalAlignment="Left" Margin="466,342,0,0" TextWrapping="Wrap" Text="Monthly Pay : " VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
