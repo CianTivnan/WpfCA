@@ -31,6 +31,7 @@ namespace WpfApp1
         {
             InitializeComponent();
 
+            //we call a method to create 4 employees and add them to our collection
             CreateEmployees();
 
             Display();
@@ -46,11 +47,13 @@ namespace WpfApp1
             Employees.Add(emp3);
             PartTimeEmployee emp4 = new PartTimeEmployee("Anne", "McCormack", 12, 24);
             Employees.Add(emp4);
+            FullTimeEmployee emp5 = new FullTimeEmployee("John", "Doe", 36000);
+            Employees.Add(emp1);
         }
 
         public void Display()
         {
-            //Employees.Sort();
+            SortEmployees();
 
             List<Employee> MarkForDelete = new List<Employee>();
 
@@ -87,6 +90,26 @@ namespace WpfApp1
             {
                 Employees.Remove(employee);
             }
+        }
+
+        public void SortEmployees()
+        {
+            List<Employee> employeeList = new List<Employee>();
+            foreach (Employee employee in Employees)
+            {
+                employeeList.Add(employee);
+            }
+
+            employeeList.Sort();
+            Employees.Clear();
+
+            foreach (Employee employee in employeeList)
+            {
+                Employees.Add(employee);
+            }
+            
+
+
         }
 
         private void cbxFullTime_Click(object sender, RoutedEventArgs e)
@@ -160,10 +183,58 @@ namespace WpfApp1
                 string fName = tbxFName.Text;
                 string lName = tbxLName.Text;
                 decimal salary = decimal.Parse(tbxSalary.Text);
-
-
-
                 Employees.Add(new FullTimeEmployee(fName, lName, salary));
+            }
+            else
+            {
+                string fName = tbxFName.Text;
+                string lName = tbxLName.Text;
+                decimal hourlyRate = decimal.Parse(tbxHourlyRate.Text);
+                double hoursWorked = double.Parse(tbxHoursWorked.Text);
+                Employees.Add(new PartTimeEmployee(fName, lName, hourlyRate, hoursWorked));
+            }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Employee selectedEmployee = lbxEmployees.SelectedItem as Employee;
+
+            if (selectedEmployee != null)
+            {
+                selectedEmployee.FirstName = tbxFName.Text;
+                selectedEmployee.Surname = tbxLName.Text;
+
+                if (selectedEmployee is PartTimeEmployee)
+                {
+                    PartTimeEmployee selectedPT = selectedEmployee as PartTimeEmployee;
+
+                    selectedPT.HourlyRate = decimal.Parse(tbxHourlyRate.Text);
+                    selectedPT.HoursWorked = double.Parse(tbxHoursWorked.Text);
+                }
+                else
+                {
+                    FullTimeEmployee selectedFT = selectedEmployee as FullTimeEmployee;
+
+                    selectedFT.Salary = decimal.Parse(tbxSalary.Text);
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Employee selectedEmployee = lbxEmployees.SelectedItem as Employee;
+
+            if(selectedEmployee != null)
+            {
+                Employees.Remove(selectedEmployee);
+                tbxFName.Clear();
+                tbxLName.Clear();
+                rdoFullTime.IsChecked = false;
+                rdoPartTime.IsChecked = false;
+                tbxSalary.Clear();
+                tbxHourlyRate.Clear();
+                tbxHoursWorked.Clear();
+                tblkMonthlyPay.Text = "Monthly Pay : ";
             }
         }
     }

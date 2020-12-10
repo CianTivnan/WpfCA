@@ -25,8 +25,8 @@
         <TextBox x:Name="tbxHourlyRate" HorizontalAlignment="Left" Height="23" Margin="466,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="680,100,0,0" VerticalAlignment="Top" Width="75" Click="btnClear_Click"/>
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="680,138,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="680,185,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="680,229,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="680,185,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="680,229,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
         <TextBlock x:Name="tblkMonthlyPay" HorizontalAlignment="Left" Margin="466,342,0,0" TextWrapping="Wrap" Text="Monthly Pay : " VerticalAlignment="Top"/>
 
     </Grid>

@@ -22,8 +22,8 @@ namespace WpfApp1
 
         public int CompareTo(Employee emp)
         {
-            int result = Surname.CompareTo(emp.Surname);
-            return result;
+            return Surname.CompareTo(emp.Surname);
+            //return result;
         }
 
         public override string ToString()
