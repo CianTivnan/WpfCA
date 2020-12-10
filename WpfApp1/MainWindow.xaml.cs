@@ -24,9 +24,32 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Employee> Employees = new List<Employee>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            CreateEmployees();
+
+            Display();
+        }
+
+        public void CreateEmployees()
+        {
+            FullTimeEmployee emp1 = new FullTimeEmployee("John", "Doe", 36000);
+            Employees.Add(emp1);
+            FullTimeEmployee emp2 = new FullTimeEmployee("Jane", "Doherty", 54000);
+            Employees.Add(emp2);
+            PartTimeEmployee emp3 = new PartTimeEmployee("Robert", "Kenny", 10, 18.5);   
+            Employees.Add(emp3);
+            PartTimeEmployee emp4 = new PartTimeEmployee("Anne", "McCormack", 10, 18.5);
+            Employees.Add(emp4);
+        }
+
+        public void Display()
+        {
+
         }
     }
 }

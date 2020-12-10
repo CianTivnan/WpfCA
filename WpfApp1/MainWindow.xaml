@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox x:Name="lbxEmployees" HorizontalAlignment="Left" Height="246" Margin="68,96,0,0" VerticalAlignment="Top" Width="162"/>
+        <CheckBox x:Name="cbxFullTime" Content="Full Time" HorizontalAlignment="Left" Margin="68,53,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxPartTime" Content="Part Time" HorizontalAlignment="Left" Margin="160,53,0,0" VerticalAlignment="Top"/>
+        <Label Content="Employees" HorizontalAlignment="Left" Margin="68,73,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblFName" Content="First Name" HorizontalAlignment="Left" Margin="334,96,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxFName" HorizontalAlignment="Left" Height="23" Margin="466,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
+        <Label x:Name="lblLName" Content="First Name" HorizontalAlignment="Left" Margin="334,135,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxLName" HorizontalAlignment="Left" Height="23" Margin="466,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.408,1.261"/>
+        <RadioButton x:Name="rdoFullTime" Content="FT" HorizontalAlignment="Left" Margin="466,190,0,0" VerticalAlignment="Top" GroupName="EmployeeType"/>
+        <RadioButton x:Name="rdoPartTime" Content="PT" HorizontalAlignment="Left" Margin="554,190,0,0" VerticalAlignment="Top" GroupName="EmployeeType"/>
+
     </Grid>
 </Window>
