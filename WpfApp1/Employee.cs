@@ -8,9 +8,13 @@ namespace WpfApp1
 {
     abstract class Employee : IComparable<Employee>
     {
+        //properties
         public string FirstName { get; set; }
 
         public string Surname { get; set; }
+
+        //constructors
+        public Employee() { }
 
         public Employee(string a, string b)
         {
@@ -18,16 +22,19 @@ namespace WpfApp1
             Surname = b;
         }
 
+        //abstract method for calculating pay
         abstract public decimal CalculateMonthlyPay();
 
+        //sort method for sorting by surname
         public int CompareTo(Employee emp)
         {
             return Surname.CompareTo(emp.Surname);
-            //return result;
         }
 
+        //method for ToString()
         public override string ToString()
         {
+            //we check what type of employee we are dealing with
             string empType = "";
             if(this is PartTimeEmployee)
             {
@@ -38,6 +45,7 @@ namespace WpfApp1
                 empType = "Full Time";
             }
 
+            //then we return the string with the employee type within
             return string.Format($"{Surname.ToUpper()}, {FirstName} - {empType}");
         }
     }

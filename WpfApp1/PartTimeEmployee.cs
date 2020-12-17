@@ -8,9 +8,13 @@ namespace WpfApp1
 {
     class PartTimeEmployee : Employee
     {
+        //properties
         public decimal HourlyRate { get; set; }
 
         public double HoursWorked { get; set; }
+
+        //constructors
+        public PartTimeEmployee() { }
 
         public PartTimeEmployee(string a, string b, decimal c, double d) : base(a, b)
         {
@@ -18,6 +22,7 @@ namespace WpfApp1
             HoursWorked = d;
         }
 
+        //override method for calculating pay
         public override decimal CalculateMonthlyPay()
         {
             return HourlyRate * (Convert.ToDecimal(HoursWorked));
